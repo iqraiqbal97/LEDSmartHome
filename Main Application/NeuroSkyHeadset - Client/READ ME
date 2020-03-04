@@ -1,0 +1,86 @@
+
+---------------------------------------------------------------------
+GETTING STARTED - Devices required
+---------------------------------------------------------------------
+1)NeuroSky Headset - Mindwave mobile 2
+  Be sure to use alkaline AAA batteries as a carbon zinc battery will cause connectivity issues.
+  
+2)PhidgetRFID Kit including a LED
+
+---------------------------------------------------------------------
+INSTALLATION - Files the user must download to run the software
+---------------------------------------------------------------------
+
+1) On the NeuroSky Store the user is able to download 'Thinkgear Connector'
+   This simply allows the headset to connect to the computer  using a open network socket
+
+   The link below will direct you to the download file for Windows and Mac OS
+   https://store.neurosky.com/products/thinkgear-connector
+   
+2) OPTIONAL - The user may wish to download 'Phidget Control Panel'
+   This easily identifies if the computer has detected the phidget device 
+   and also enables the individual to ensure the light is working correctly. 
+   
+3) Download Eclipse Java EE IDE for Web Developers.
+   Version: 2018-09 (4.9.0)
+  
+4) Download Android Studio 3.2.1
+   
+---------------------------------------------------------------------
+   TRAINING PROGRAMME - Calibrating the programme for the individual 
+---------------------------------------------------------------------
+1)Successfully connect to 'ThinkGearConnector'
+2)Open the folder - 'NeuroSkyHeadset - Training' and the package 'thinkgeartraining'
+3)Open the file ThinkGearTraining 
+  Depending on what value you would like to record, comment the method you do not wish to use out. 
+ 	a) Line 41 - Line 65 
+  	   This block of code will read the value for light ON and find an average
+  	b) Line 69- Line 91
+  	   This block of code will read the value for light OFF and find the average
+    c) Run the code as a Java Application
+4)The user has the choice to stop the method at any duration of finding the average due to the individuals reading being very different 
+5)Once the average value is contained - Go to line  81/93/104 in 'HeadsetAndLED.java'
+  Change the IF statement condition to cater to the unique average value for the individual.
+  	a) Line 81 is to change the if statement condition for  attention level value
+ 	b) Line 93 is to change the if statement condition for  meditation level value
+ 	c) Line 104 is to change the if statement condition for  blink strength level value
+  
+---------------------------------------------------------------------
+   MAIN APPLICATION - Use the head set to turn the LED on/off
+---------------------------------------------------------------------
+1)Firsty start by running the ThinkGearConnecter (A notification will appear if the head set has been successfully connected)
+2)Open the folder - 'NeuroSkyHeadset - Client'
+  The main file which needs to be ran is 'HeadsetAndLED.java' class on a java application.
+3)Once this class is running the class should automatically trigger events to tell the user 
+	a) Device information - Name/Number/Version
+	b) Neursosky data readings - attention/meditation/blinkStrength
+	c) Light state - ON/OFF
+ 
+---------------------------------------------------------------------
+   ANDROID APPLICATION - Manually turn the LED on/off
+---------------------------------------------------------------------
+1)Open the folder - 'NeuroSkyHeadset - Client'
+2)Run the file 'Subscriber' - This is found in the default package area
+3)Run the application on Android Studio where the interface will show the user what to click to turn the light on or off
+
+*If there are any connection issues (MQQT Exception) this may be due to the Wi-Fi*
+
+---------------------------------------------------------------------
+   API - List of essential methods
+---------------------------------------------------------------------
+1)Open the folder - 'NeuroSkyHeadset - Client'
+2)There is a class called 'NeuroskyLightAPI'
+  This contains crucial methods thats are used in this project
+
+---------------------------------------------------------------------
+   BUILT WITH - API's used
+---------------------------------------------------------------------
+There are 2 main API's used in this project
+1)ThinkGear.jar - Neurosky Headset API
+2)Phidget22.jar - Phidget Kit API
+
+---------------------------------------------------------------------
+   AUTHOR - Written by
+---------------------------------------------------------------------
+Iqra Iqbal
+
